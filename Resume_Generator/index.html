@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Resume Generator</title>
+</head>
+
+<body>
+    <!-- putting everything inside a container -->
+
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center">Fill Your Informations Here</p>
+
+        <div class="row">
+            <!-- for creating 6 columns out of 12 -->
+            <div class="col-md-6">
+                <!-- First column -->
+                <h3>Personal Information</h3>
+                <div class="form-group">
+                    <label for="nameField">Your Name</label>
+                    <input type="text" id="nameField" placeholder="Enter Name" class="form-control">
+                </div>
+                <!-- <div class="form-group mt-2">
+                    <label for="nameField1">Last Name</label>
+                    <input type="text" id="nameField1" placeholder="Enter Last Name" class="form-control">
+                </div> -->
+                <div class="form-group mt-2">
+                    <label for="contactField">Your Contact Number</label>
+                    <input type="text" id="contactField" placeholder="Enter Mobile Number" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="addressField">Your Address</label>
+                    <textarea id="addressField" placeholder="Enter Address" class="form-control">
+                    </textarea>
+                </div>
+                <div class="form-group mt-4">
+                    <label for="">Select Your Profile Picture</label>
+                    <input id="imgField" type="file" class="form-control">
+                </div>
+
+                <p class="text-secondary my-3">Important links</p>
+
+                <div class="form-group mt-2">
+                    <label for="fbField">Facebook Link</label>
+                    <input type="text" id="fbField" placeholder="Enter Here" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="instaField">Instagram Link</label>
+                    <input type="text" id="instaField" placeholder="Enter Mobile Number" class="form-control">
+                </div>
+                <div class="form-group mt-2">
+                    <label for="LinkedField">LinkedIn</label>
+                    <input type="text" id="linkedField" placeholder="Enter Mobile Number" class="form-control">
+                </div>
+
+            </div>
+            <div class="col-md-6">
+                <!-- Second column -->
+                <h3>Professional Information</h3>
+                <div class="form-group mt-2">
+                    <label for="">Objective</label>
+                    <textarea id="objectiveField" placeholder="Write Something" class="form-control"
+                        rows="4"></textarea>
+                </div>
+                <div class="form-group mt-2" id="we">
+                    <label for="">Work Experience</label>
+                    <textarea placeholder="Enter here" class="form-control weField" rows="4"></textarea>
+                    <!-- new textarea -->
+                    <div class="container text-center mt-2" id="weAddButton">
+                        <button onclick="addNewWEField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+                <div class="form-group mt-2" id="aq">
+                    <label for="">Academic Qualification</label>
+                    <textarea placeholder="Enter here" class="form-control eqField" rows="4"></textarea>
+                    <!-- new textarea -->
+                    <div class="container text-center mt-2" id="aqAddButton">
+                        <button onclick="addNewAQField()" class="btn btn-primary btn-sm">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container  text-center mt-3">
+            <button onclick="generateCV()" class="btn btn-primary btn-lg">Generate CV</button>
+        </div>
+    </div>
+
+    <!-- CV Template -->
+    <div class="container" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <!-- first col -->
+                <img src="profile_pic.png" alt="" class="img-fluid myimg" id="imgTemplate">
+
+                <div class="container">
+                    <p id="nameT1"><b>Ved Pandey</b></p>
+                    <p id="contactT"><b>941260890</b></p>
+                    <p id="addressT"><b>Bengaluru karnataka</b></p>
+                    <hr />
+                    <p id="fbT"><a href="#1">https://www.Instagram.com/</a></p>
+                    <p id="instaT"><a href="#1">https://www.Facebook.com/</a></p>
+                    <p id="linkedT"><a href="#1">https://www.LinkedIn.com/</a></p>
+                </div>
+            </div>
+            <div class="col-md-8 py-5">
+                <!-- second col -->
+                <h1 id="nameT2" class="text-center" style="font-weight:800">
+                    Ved Pandey</h1>
+
+                <!-- objective card -->
+                <div class="card mt-4">
+                    <div class="card-body background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi distinctio
+                            consequatur soluta
+                            repellat, hic debitis necessitatibus ut eaque deleniti tempore nulla enim ipsam atque
+                            accusamus itaque ipsum veritatis labore unde!</p>
+                    </div>
+                </div>
+
+                <!-- work Experience -->
+                <div class="card mt-4">
+                    <div class="card-body background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem ipsum dolor.</li>
+                            <li>Lorem ipsum dolor.</li>
+                            <li>Lorem ipsum dolor.</li>
+                            <li>Lorem ipsum dolor.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Academic Qualification -->
+                <div class="card mt-4">
+                    <div class="card-body background">
+                        <h3>Academic Qualification</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="aqT">
+                            <li>Lorem ipsum dolor.</li>
+                            <li>Lorem ipsum dolor.</li>
+                            <li>Lorem ipsum dolor.</li>
+                            <li>Lorem ipsum dolor.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="container mt-3 text-center">
+                    <button onclick="printCV()" class="btn-lg background">Print CV</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
