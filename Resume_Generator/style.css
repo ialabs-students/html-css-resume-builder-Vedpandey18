@@ -2,6 +2,10 @@
     display: none;
 }
 
+/* #cv-temlate{
+    background-color:aquamarine;
+} */
+
 .myimg{
     /* border: 1px solid rgb(189, 77, 77); */
     border-radius: 50%;
@@ -10,9 +14,10 @@
 }
 
 .background{
-    background-color:aqua;
+    background-color:rgb(220, 194, 79);
 }
 
 #cv-form{
     background-color: rgb(125, 199, 172);
 }
+

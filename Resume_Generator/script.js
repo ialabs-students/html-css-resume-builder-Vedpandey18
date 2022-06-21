@@ -1,3 +1,4 @@
+// Work experience
 function addNewWEField() {
     let newNode = document.createElement('textarea');
     newNode.classList.add('form-control');
@@ -12,7 +13,7 @@ function addNewWEField() {
     weOb.insertBefore(newNode, weAddButtonOb);
 
 }
-
+// Academic Qualification
 function addNewAQField() {
     let newNode = document.createElement('textarea');
     newNode.classList.add('form-control');
@@ -27,8 +28,6 @@ function addNewAQField() {
     weOb.insertBefore(newNode, weAddButtonOb);
 
 }
-
-
 //generating CV
 
 function generateCV() {
@@ -50,6 +49,10 @@ function generateCV() {
 
     document.getElementById('addressT').innerHTML = document.getElementById("addressField").value;
 
+    // skills  skillField'
+    
+    document.getElementById('skillT').innerHTML = document.getElementById("skillField").value;
+
     //links
 
     document.getElementById('instaT').innerHTML = document.getElementById("instaField").value;
@@ -64,23 +67,20 @@ function generateCV() {
 
     //  work experience
 
-    let wes = document.getElementsByClassName("weField");
+// console.log("It is working");
 
-    let str = "";
+    let wes = document.getElementsByClassName('weField');
+    let str = '';
     for (let e of wes) {
-        // str = str + '<li> ${e.value} </li>';
-    }
-    document.getElementById("weT").innerHTML = str;
+    str = str +`<li> ${e.value} </li>`; }
+    document.getElementById('weT').innerHTML = str;
 
     // Aq
 
     let aqs = document.getElementsByClassName("eqField");
-
-    let str1 = "";
-
-
+    let str1 = '';
     for (let e of aqs) {
-        str = str + '<li> ${e.value} </li>';
+        str1 = str1 + `<li> ${e.value} </li>`;
     }
     document.getElementById("aqT").innerHTML = str1;
 
@@ -90,7 +90,6 @@ function generateCV() {
     console.log(file);
     let reader = new FileReader();
      reader.readAsDataURL(file);
-
      console.log(reader.reasult);
      reader.onloadend=function()
      {
@@ -109,6 +108,7 @@ function generateCV() {
 function printCV() {
     window.print();
 }
+
 
 
 //try catch block example
