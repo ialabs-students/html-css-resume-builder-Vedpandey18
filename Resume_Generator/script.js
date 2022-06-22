@@ -45,6 +45,10 @@ function generateCV() {
 
     document.getElementById('contactT').innerHTML = document.getElementById("contactField").value;
 
+    //email
+
+    document.getElementById('emailT').innerHTML = document.getElementById("emailField").value;
+
     //address
 
     document.getElementById('addressT').innerHTML = document.getElementById("addressField").value;
@@ -89,7 +93,7 @@ function generateCV() {
     let file = document.getElementById("imgField").files[0];
     console.log(file);
     let reader = new FileReader();
-     reader.readAsDataURL(file);
+    reader.readAsDataURL(file);
      console.log(reader.reasult);
      reader.onloadend=function()
      {
